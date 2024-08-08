@@ -1,6 +1,6 @@
 
 export default function Page()  {
   return (
-    <div>HomePage</div>
+    <div className="border-spacing-0" >HomePage</div>
   )
 }

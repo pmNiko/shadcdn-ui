@@ -1,12 +1,28 @@
 // https://tailwindcomponents.com/component/tailwind-css-admin-dashboard-layout
 // https://gist.github.com/Klerith/3949f1c8b884d7101e378dfb668f0f3a
 
-import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import Link from 'next/link';
 
 const links = [
-  { name: "accordion", href: "accordion" },
-  { name: "alert", href: "alert" },
-];
+  { name: 'accordion', href: 'accordion' },
+  { name: 'alert-dialog', href: 'alert-dialog' },
+  { name: 'alert', href: 'alert' },
+  { name: 'avatar', href: 'avatar' },
+  { name: 'badge', href: 'badge' },
+  { name: 'button', href: 'button' },
+  { name: 'calendar', href: 'calendar' },
+  { name: 'card', href: 'card' },
+  { name: 'carousel', href: 'carousel' },
+  { name: 'checkbox', href: 'checkbox' },
+  { name: 'combobox', href: 'combobox' },
+  { name: 'command', href: 'command' },
+  { name: 'dialog', href: 'dialog' },
+  { name: 'context-menu', href: 'context-menu' },
+  { name: 'menubar', href: 'menubar' },
+  { name: 'input-otp', href: 'input-otp' },
+  { name: 'progress', href: 'progress' },
+].sort((a, b) => a.name.localeCompare(b.name));
 
 export default function DashboardLayout({
   children,
@@ -87,16 +103,20 @@ export default function DashboardLayout({
                   ></line>
                 </svg>
                 <span className="self-center whitespace-nowrap ml-2">
-                  {" "}
+                  {' '}
                   Shadcn/ui
                 </span>
               </a>
             </div>
             <div className="flex items-center">
               {/* User Avatar */}
-              <div className="bg-blue-500 text-white p-2 rounded-full w-12 h-12 flex items-center justify-center">
-                FH
-              </div>
+              <Avatar>
+                <AvatarImage
+                  src="https://github.com/shadcn.png"
+                  alt="@shadcn"
+                />
+                <AvatarFallback>NK</AvatarFallback>
+              </Avatar>
             </div>
           </div>
         </div>
@@ -143,7 +163,7 @@ export default function DashboardLayout({
               </div>
             </div>
           </main>
-          <footer className="bg-white md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
+          <footer className="bg-white md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4 print:hidden">
             <ul className="flex items-center flex-wrap mb-6 md:mb-0">
               <li>
                 <a
@@ -255,8 +275,8 @@ export default function DashboardLayout({
               </a>
             </div>
           </footer>
-          <p className="text-center text-sm text-gray-500 my-10">
-            &copy; 2019-{new Date().getFullYear()}{" "}
+          <p className="text-center text-sm text-gray-500 my-10 print:hidden ">
+            &copy; 2019-{new Date().getFullYear()}{' '}
             <a href="#" className="hover:underline" target="_blank">
               Themesberg
             </a>
