@@ -4,6 +4,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Link from 'next/link';
 
+
 const links = [
   { name: 'accordion', href: 'accordion' },
   { name: 'alert-dialog', href: 'alert-dialog' },
@@ -24,6 +25,10 @@ const links = [
   { name: 'progress', href: 'progress' },
   { name: 'sheet', href: 'sheet' },
   { name: 'skeleton', href: 'skeleton' },
+  { name: 'slider', href: 'slider' },
+  { name: 'sonner', href: 'sonner' },
+  { name: 'toast', href: 'toast' },
+  { name: 'tabs', href: 'tabs' },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
 export default function DashboardLayout({
@@ -286,6 +291,7 @@ export default function DashboardLayout({
           </p>
         </div>
       </div>
+     
     </>
   );
 }
