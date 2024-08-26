@@ -13,8 +13,8 @@ import { Label } from '@/components/ui/label';
 export default function Page() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-      {[...Array(9)].map((item) => (
-        <Card key={item}>
+      {[...Array(9)].map((item, i) => (
+        <Card key={item + i}>
           <CardHeader>
             <CardTitle>Card Title</CardTitle>
             <CardDescription>Card Description</CardDescription>
@@ -24,7 +24,7 @@ export default function Page() {
           </CardContent>
           <CardFooter className="flex justify-between">
             <Button variant="ghost">Info</Button>
-            <Button variant="secondary">más</Button>
+            <Button variant="default" >más</Button>
           </CardFooter>
         </Card>
       ))}
